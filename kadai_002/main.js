@@ -103,15 +103,15 @@ const gameOver = id => {
 
   typedfield.textContent = '';
   untypedfield.textContent = 'タイムアップ！';
+  
   // 10ms後にrankCheckを表示する
   setTimeout(() => {
     const result = confirm(rankCheck(score));
+     // OKボタンをクリックされたらリロードする
+    if (result == true) {
+      window.location.reload();
+    }
   }, 10);
-
-  // OKボタンをクリックされたらリロードする
-  if (result == true) {
-    window.location.reload();
-  }
 };
 
 // カウントダウンタイマー
